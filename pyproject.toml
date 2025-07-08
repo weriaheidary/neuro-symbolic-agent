@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "neuro-symbolic-agent"
+version = "0.1.0"
+description = "A hybrid neuro-symbolic agent with reasoning, memory, and language capabilities."
+authors = ["WryaHey"]
+license = "MIT"
+packages = [
+    { include = "neuro_agent" }
+]
+
+[tool.poetry.scripts]
+start = "neuro_agent.run:main"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+numpy = "^1.25"
+pandas = "^2.2"
+torch = "2.1.0"
+rdflib = "^7.0"
+networkx = "^3.2"
+sentence-transformers = "^2.7"
+langchain = "^0.2.0"
+sympy = "^1.12"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
