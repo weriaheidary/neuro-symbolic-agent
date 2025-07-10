@@ -10,6 +10,14 @@ class GilgameshAgent:
         "limit_encounter",
         "return_to_city",
     ]
+    state_meanings = {
+        "tyrant": "Will to control; denial of death or limit.",
+        "encounter_with_enkidu": "A mirror encounter; emergence of the Other.",
+        "grief": "Loss of the idealized self; first touch of mortality.",
+        "quest_for_immortality": "A desperate displacement to escape grief.",
+        "limit_encounter": "Collision with the boundary of human condition.",
+        "return_to_city": "Integration of limit; subjectivized leadership."
+    }
     def __init__(self):
         self.machine = Machine(model=self, states=GilgameshAgent.states, initial='tyrant')
 
@@ -21,3 +29,6 @@ class GilgameshAgent:
 
     def current_state(self):
         return self.state
+    
+    def current_meaning(self):
+        return self.state_meanings.get(self.state, "Unknown state")
