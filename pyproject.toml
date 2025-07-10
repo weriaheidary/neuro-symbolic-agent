@@ -21,6 +21,7 @@ networkx = "^3.2"
 sentence-transformers = "^2.7"
 langchain = "^0.2.0"
 sympy = "^1.12"
+transitions = "^0.9.3"
 
 [build-system]
 requires = ["poetry-core"]
