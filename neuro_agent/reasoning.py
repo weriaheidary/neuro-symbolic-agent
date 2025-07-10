@@ -18,6 +18,14 @@ class GilgameshAgent:
         "limit_encounter": "Collision with the boundary of human condition.",
         "return_to_city": "Integration of limit; subjectivized leadership."
     }
+    state_affects = {
+        "tyrant": "aggression",
+        "encounter_with_enkidu": "curiosity",
+        "grief": "sadness",
+        "quest_for_immortality": "anxiety",
+        "limit_encounter": "despair",
+        "return_to_city": "acceptance"
+    }
     def __init__(self):
         self.machine = Machine(model=self, states=GilgameshAgent.states, initial='tyrant')
 
@@ -32,3 +40,6 @@ class GilgameshAgent:
     
     def current_meaning(self):
         return self.state_meanings.get(self.state, "Unknown state")
+    
+    def current_emotion(self):
+        return self.state_affects.get(self.state, "neutral")
