@@ -1,5 +1,6 @@
 # Reasoning module placeholder
 from transitions import Machine
+from neuro_agent.memory import NarrativeMemory
 
 class GilgameshAgent:
     states = [
@@ -27,6 +28,7 @@ class GilgameshAgent:
         "return_to_city": "acceptance"
     }
     def __init__(self):
+        self.memory = NarrativeMemory()
         self.machine = Machine(model=self, states=GilgameshAgent.states, initial='tyrant')
 
         self.machine.add_transition('meet_enkidu', 'tyrant', 'encounter_with_enkidu')
@@ -34,6 +36,36 @@ class GilgameshAgent:
         self.machine.add_transition('seek_immortality', 'grief', 'quest_for_immortality')
         self.machine.add_transition('fail_quest', 'quest_for_immortality', 'limit_encounter')
         self.machine.add_transition('accept_limit', 'limit_encounter', 'return_to_city')
+
+        self.log_current_state()
+
+    def log_current_state(self):
+        self.memory.record(
+            state=self.state,
+            meaning=self.current_meaning(),
+            emotion=self.current_emotion()
+        )
+
+    # override transitions to log after each change
+    def meet_enkidu(self):
+        self.trigger('meet_enkidu')
+        self.log_current_state()
+
+    def lose_enkidu(self):
+        self.trigger('lose_enkidu')
+        self.log_current_state()
+
+    def seek_immortality(self):
+        self.trigger('seek_immortality')
+        self.log_current_state()
+
+    def fail_quest(self):
+        self.trigger('fail_quest')
+        self.log_current_state()
+
+    def accept_limit(self):
+        self.trigger('accept_limit')
+        self.log_current_state()
 
     def current_state(self):
         return self.state
