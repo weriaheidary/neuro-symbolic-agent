@@ -1,12 +1,13 @@
-from neuro_agent.reasoning import GilgameshAgent
+from neuro_agent.agent import NeuroSymbolicAgent
 
-agent = GilgameshAgent()
+agent = NeuroSymbolicAgent()
 
-agent.meet_enkidu()
-agent.lose_enkidu()
-agent.seek_immortality()
-agent.fail_quest()
-agent.accept_limit()
+agent.transition("meet_enkidu")
+agent.transition("lose_enkidu")
+agent.transition("seek_immortality")
+agent.transition("fail_quest")
+agent.transition("accept_limit")
+
 
 print("\n--- Memory Summary ---")
 agent.memory.summarize()
