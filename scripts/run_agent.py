@@ -2,12 +2,15 @@ from neuro_agent.agent import NeuroSymbolicAgent
 
 agent = NeuroSymbolicAgent()
 
-agent.transition("meet_enkidu")
-agent.transition("lose_enkidu")
-agent.transition("seek_immortality")
-agent.transition("fail_quest")
-agent.transition("accept_limit")
+inputs = [
+    "Gilgamesh meets Enkidu in the forest",
+    "He is devastated by Enkidu's death",
+    "He seeks eternal life to avoid suffering",
+    "He fails in his quest for immortality",
+    "Finally, he accepts the limits of being human"
+]
 
-
-print("\n--- Memory Summary ---")
-agent.memory.summarize()
+for sentence in inputs:
+    print(f"\n Input: {sentence}")
+    agent.perceive_and_act(sentence)
+    print(f"{agent.narrate()} Gilgamesh said.")
