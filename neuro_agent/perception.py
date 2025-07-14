@@ -1,19 +1,27 @@
 # Perception module placeholder
+from sentence_transformers import SentenceTransformer, util
+    
 
 class PerceptionModule:
-    def interpret(self, input_text: str) -> str | None:
-        # Very basic rule-based example:
-        input_text = input_text.lower()
-        # Priority matters: more specific → earlier
-        if any(word in input_text for word in ["fail", "impossible", "defeat"]):
-            return "fail_quest"
-        if any(word in input_text for word in ["eternal", "immortal", "escape death", "live forever"]):
-            return "seek_immortality"
-        if "enkidu" in input_text and "meet" in input_text:
-            return "meet_enkidu"
-        if any(word in input_text for word in ["death", "die", "loss", "devastated", "mourning", "grief"]):
-            return "lose_enkidu"
-        if any(word in input_text for word in ["accept", "return", "limit", "human"]):
-            return "accept_limit"
+    def __init__(self):
+        self.model = SentenceTransformer('all-MiniLM-L6-v2')
+        self.labels = {
+            "meet_enkidu": "Gilgamesh meets Enkidu",
+            "lose_enkidu": "Enkidu dies and Gilgamesh mourns",
+            "seek_immortality": "Gilgamesh seeks eternal life",
+            "fail_quest": "Gilgamesh fails in his quest",
+            "accept_limit": "He accepts the limits of mortality"
+        }
+        self.label_embeddings = self.model.encode(list(self.labels.values()), convert_to_tensor=True)
 
+    def interpret(self, input_text: str) -> str | None:
+        input_embedding = self.model.encode(input_text, convert_to_tensor=True)
+        similarities = util.cos_sim(input_embedding, self.label_embeddings)[0]  # type: ignore
+
+        best_match_idx = int(similarities.argmax())
+        best_score = float(similarities[best_match_idx])
+        threshold = 0.6
+
+        if best_score >= threshold:
+            return list(self.labels.keys())[best_match_idx]
         return None
