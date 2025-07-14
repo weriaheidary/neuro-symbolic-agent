@@ -3,6 +3,7 @@ from transitions import Machine
 from neuro_agent.memory import NarrativeMemory
 
 class GilgameshFSM:
+    state: str
     states = [
         "tyrant",
         "encounter_with_enkidu",
