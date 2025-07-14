@@ -1,7 +1,7 @@
 # Perception module placeholder
 
 class PerceptionModule:
-    def interpret(self, input_text: str) -> str:
+    def interpret(self, input_text: str) -> str | None:
         # Very basic rule-based example:
         input_text = input_text.lower()
         # Priority matters: more specific → earlier
