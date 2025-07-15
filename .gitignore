@@ -10,3 +10,5 @@ poetry.lock
 venv/
 .idea/
 .DS_Store
+neuro_agent/fine_tuned_sbert/
+
