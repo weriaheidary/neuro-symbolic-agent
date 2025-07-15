@@ -1,10 +1,12 @@
 # Perception module placeholder
 from sentence_transformers import SentenceTransformer, util
+from pathlib import Path
     
 
 class PerceptionModule:
     def __init__(self):
-        self.model = SentenceTransformer('all-MiniLM-L6-v2')
+        model_path = Path(__file__).parent / "fine_tuned_sbert"
+        self.model = SentenceTransformer(str(model_path))
         self.labels = {
             "meet_enkidu": "Gilgamesh meets Enkidu",
             "lose_enkidu": "Enkidu dies and Gilgamesh mourns",
