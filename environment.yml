@@ -9,6 +9,10 @@ dependencies:
   - numpy
   - pandas
   - jupyterlab
+  - transformers
+  - pyarrow
+  - tokenizers
+  - datasets
   - pip:
       - langchain
       - sentence-transformers

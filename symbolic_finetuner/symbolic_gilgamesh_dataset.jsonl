@@ -1,0 +1,91 @@
+
+  {
+    "text": "A wild man appears in the wilderness, disrupting the hunters.",
+    "label": "meet_enkidu"
+  }
+  {
+    "text": "Gilgamesh encounters a fierce stranger who becomes his brother.",
+    "label": "meet_enkidu"
+  }
+  {
+    "text": "The untamed Enkidu challenges the king’s authority.",
+    "label": "meet_enkidu"
+  }
+  {
+    "text": "Enkidu’s strength balances Gilgamesh’s power.",
+    "label": "meet_enkidu"
+  }
+  {
+    "text": "Enkidu grows weak and dies, leaving Gilgamesh devastated.",
+    "label": "lose_enkidu"
+  }
+  {
+    "text": "The death of his friend shakes Gilgamesh to his core.",
+    "label": "lose_enkidu"
+  }
+  {
+    "text": "Gilgamesh mourns endlessly after Enkidu’s passing.",
+    "label": "lose_enkidu"
+  }
+  {
+    "text": "The gods punish Enkidu with a fatal illness.",
+    "label": "lose_enkidu"
+  }
+  {
+    "text": "He searches far and wide for the secret to eternal life.",
+    "label": "seek_immortality"
+  }
+  {
+    "text": "Gilgamesh seeks Utnapishtim to learn how to live forever.",
+    "label": "seek_immortality"
+  }
+  {
+    "text": "Driven by fear of death, he quests for immortality.",
+    "label": "seek_immortality"
+  }
+  {
+    "text": "He journeys to the edge of the world hoping to cheat death.",
+    "label": "seek_immortality"
+        }
+  {
+    "text": "Gilgamesh’s quest ends in failure when the serpent steals the plant.",
+    "label": "fail_quest"
+  }
+  {
+    "text": "He falls asleep and loses the gift that could have saved him.",
+    "label": "fail_quest"
+  }
+  {
+    "text": "His attempts to gain eternal life are in vain.",
+    "label": "fail_quest"
+  }
+  {
+    "text": "Gilgamesh returns home empty-handed but changed forever.",
+    "label": "accept_limit"
+  }
+  {
+    "text": "He accepts mortality and focuses on his legacy in Uruk.",
+    "label": "accept_limit"
+  }
+  {
+    "text": "Wiser and humbled, Gilgamesh embraces the limits of life.",
+    "label": "accept_limit"
+  }
+
+  {
+    "text": "The sun rises over the city, untouched by mortal struggles.",
+    "label": "none"
+  }
+  {
+    "text": "The river flows silently, carrying leaves downstream.",
+    "label": "none"
+  }
+  {
+    "text": "A farmer tends his fields, unaware of distant gods.",
+    "label": "none"
+  }
+  {
+    "text": "Birds sing in the trees, indifferent to kings and heroes.",
+    "label": "none"
+  }
+

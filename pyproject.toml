@@ -23,6 +23,14 @@ langchain = "^0.2.0"
 sympy = "^1.12"
 transitions = "^0.9.3"
 plotly = "^6.2.0"
+pyarrow = "==15.0.0"
+peft = "^0.16.0"
+trl = "^0.19.1"
+accelerate = "^1.9.0"
+transformers = "^4.53.3"
+datasets = "^4.0.0"
+python-dotenv = "^1.1.1"
+huggingface-hub = "^0.33.4"
 
 [build-system]
 requires = ["poetry-core"]
